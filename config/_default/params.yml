@@ -124,9 +124,9 @@ sidebar:
     show_common: true # whether to show common sidebar, ignored on mobile devices
 
 social:
-  # email: mailto:xxx@gmail.com
-  # github: https://github.com/yourname
-  # google: https://plus.google.com/yourname
+  # email: moshang168@gmail.com
+  # github: https://github.com/moshang168
+  # google: https://plus.google.com/moshang168
   # twitter: https://twitter.com/yourname
   # bluesky: https://bsky.app/profile/yourname
   # facebook: https://www.facebook.com/yourname
@@ -147,11 +147,11 @@ social:
   # deviantart: https://yourname.deviantart.com
   # stackoverflow: https://stackoverflow.com/users/yourname
   # keybase: https://keybase.io/yourname
-  # telegram: https://t.me/yourname
+  # telegram: https://t.me/@langya369
   # discord: https://discordapp.com/users/yourname
   # steam: https://steamcommunity.com/id/yourname
   # weixin: 
-  # qq:
+  # qq:838858106
   # tiktok:
 
 widgets:
