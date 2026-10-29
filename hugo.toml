@@ -1,10 +1,9 @@
-baseURL = 'https://moshang168.github.io/My-blog/'
+baseURL = 'https://moshang168.github.io/'
 title = '我的博客'
 theme = "reimu"
 
-# GitHub Pages子路径部署必须开启相对路径，避免CSS/JS 404
+# 相对路径模式，自动适配任意部署子路径，避免CSS/JS 404
 relativeURLs = true
-relativeURLsTimeout = 10000
 
 # 站点语言
 languageCode = "zh-cn"
