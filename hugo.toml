@@ -1,0 +1,17 @@
+baseURL = 'https://example.org/'
+title = '我的博客'
+theme = "reimu"
+
+# 站点语言
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+
+# 首页显示的文章目录
+mainSections = ["posts"]
+# 分页数量
+paginate = 10
+
+# 代码高亮配置
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
