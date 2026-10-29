@@ -36,7 +36,7 @@ description: "热爱技术、喜欢折腾的普通开发者。"
 # subtitle: "热爱技术、喜欢折腾的普通开发者。"
 subtitle:
   typing:
-    enable: false
+    enable: true 
     strings:
       # - Sentence 1
       # - Sentence 2
