@@ -1,0 +1,57 @@
+name: 构建并部署Hugo博客到GitHub Pages
+
+on:
+  # 推送到main分支时自动触发
+  push:
+    branches: [ main ]
+  # 支持在Actions页面手动触发
+  workflow_dispatch:
+
+# 授予部署Pages的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一分支只运行最新一次构建，取消旧的任务
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.139.0
+      HUGO_ENVIRONMENT: production
+      TZ: Asia/Shanghai
+    steps:
+      - name: 检出代码（含Git子模块）
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: 安装Hugo Extended版本
+        run: |
+          wget -O hugo.deb "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i hugo.deb
+
+      - name: 构建静态站点
+        run: hugo --minify
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: 部署到GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
