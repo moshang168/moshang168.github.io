@@ -59,7 +59,7 @@ banner: "images/cyberdogge-hero.webp"
 
 # If you want to use the srcset attribute, please enable it
 banner_srcset:
-  enable: true 
+  enable: false 
   srcset:
     - src: "images/banner-600w.webp"
       media: "(max-width: 479px)"
@@ -174,7 +174,7 @@ show_update_time: false # If you want to show the update time, please set this t
 
 # Summary content
 summary:
-  enable: false
+  enable: true
   style: 'subtitle' # 'subtitle' or 'blockquote'
 
 # RSS output
@@ -275,7 +275,7 @@ dark_mode:
 ########################################
 
 baidu_analytics: false
-google_analytics: false
+google_analytics: true
 clarity: false
 
 ########################################
