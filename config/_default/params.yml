@@ -274,7 +274,7 @@ dark_mode:
 ########################################
 
 baidu_analytics: false
-google_analytics: true
+google_analytics: false
 clarity: false
 
 ########################################

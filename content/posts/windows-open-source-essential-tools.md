@@ -1,5 +1,6 @@
 ---
 title: "10个Windows上必装的开源免费实用软件，无广告无捆绑"
+date: 2026-10-30
 draft: false
 description: "整理GitHub上好评如潮的Windows开源工具，替代臃肿的付费软件，干净无广告，每一个都是提升效率的利器。"
 tags: ["开源软件", "Windows", "效率工具", "GitHub"]

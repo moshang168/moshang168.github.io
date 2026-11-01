@@ -1,5 +1,6 @@
 ---
 title: "Obsidian+Git：免费搭建完全本地化的个人知识库同步方案"
+date: 2026-10-30
 draft: false
 description: "不用付费笔记软件，用Obsidian搭配Git插件实现多端笔记同步，数据完全自己掌控，支持版本历史回溯。"
 tags: ["开源软件", "Obsidian", "笔记", "知识管理"]

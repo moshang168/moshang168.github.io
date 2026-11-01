@@ -1,5 +1,6 @@
 ---
 title: "Home Assistant智能家居中枢入门：把所有智能家居设备统一管理"
+date: 2026-10-30
 draft: false
 description: "开源免费的智能家居中枢，把不同品牌的智能灯、开关、传感器全部整合到一个系统里，摆脱各品牌APP分裂。"
 tags: ["开源软件", "智能家居", "Home Assistant", "家庭自动化"]

@@ -1,5 +1,6 @@
 ---
 title: "本地大模型部署完全指南：用Ollama在Windows上一键跑开源大模型"
+date: 2026-10-30
 draft: false
 description: "无需复杂配置，10分钟在本地Windows电脑部署可离线使用的开源大模型，支持Qwen、Llama、DeepSeek等主流模型。"
 tags: ["AI", "大模型", "本地部署", "Ollama"]
