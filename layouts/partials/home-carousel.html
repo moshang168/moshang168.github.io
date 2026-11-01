@@ -1,0 +1,67 @@
+{{- $ctx := . -}}
+{{- $posts := where .Site.RegularPages "Section" "in" .Site.Params.mainSections -}}
+{{- $latest := first 5 ($posts.ByDate.Reverse) -}}
+{{- if $latest -}}
+  <section class="home-carousel" aria-label="最新文章轮播">
+    <div class="home-carousel-track">
+      {{- range $index, $page := $latest -}}
+        {{- $cover := $page.Params.cover -}}
+        {{- if or (not $cover) (hasPrefix $cover "rgb") -}}
+          {{- $cover = $ctx.Site.Params.banner -}}
+        {{- end -}}
+        <article class="home-carousel-slide{{ if eq $index 0 }} is-active{{ end }}" aria-hidden="{{ if eq $index 0 }}false{{ else }}true{{ end }}">
+          <a href="{{ $page.RelPermalink }}" aria-label="阅读：{{ $page.Title }}">
+            <img src="{{ $cover | relURL }}" alt="{{ $page.Title }}" {{ if eq $index 0 }}fetchpriority="high"{{ else }}loading="lazy"{{ end }} />
+            <span class="home-carousel-caption">
+              <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format $ctx.Site.Params.dateFormat }}</time>
+              <span class="home-carousel-title">{{ $page.Title }}</span>
+            </span>
+          </a>
+        </article>
+      {{- end -}}
+    </div>
+    <button class="home-carousel-arrow home-carousel-prev" type="button" aria-label="上一篇文章">‹</button>
+    <button class="home-carousel-arrow home-carousel-next" type="button" aria-label="下一篇文章">›</button>
+    <div class="home-carousel-dots" aria-label="选择文章">
+      {{- range $index, $page := $latest -}}
+        <button class="home-carousel-dot{{ if eq $index 0 }} is-active{{ end }}" type="button" aria-label="显示第{{ add $index 1 }}篇：{{ $page.Title }}" aria-current="{{ if eq $index 0 }}true{{ else }}false{{ end }}"></button>
+      {{- end -}}
+    </div>
+  </section>
+  <script>
+    (() => {
+      const carousel = document.querySelector('.home-carousel');
+      if (!carousel) return;
+      const slides = [...carousel.querySelectorAll('.home-carousel-slide')];
+      const dots = [...carousel.querySelectorAll('.home-carousel-dot')];
+      if (slides.length < 2) return;
+      let active = 0;
+      let timer;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const show = (index) => {
+        active = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+          const selected = i === active;
+          slide.classList.toggle('is-active', selected);
+          slide.setAttribute('aria-hidden', String(!selected));
+          dots[i].classList.toggle('is-active', selected);
+          dots[i].setAttribute('aria-current', String(selected));
+        });
+      };
+      const stop = () => window.clearInterval(timer);
+      const start = () => {
+        stop();
+        if (!reducedMotion && !document.hidden) timer = window.setInterval(() => show(active + 1), 5000);
+      };
+      carousel.querySelector('.home-carousel-prev').addEventListener('click', () => { show(active - 1); start(); });
+      carousel.querySelector('.home-carousel-next').addEventListener('click', () => { show(active + 1); start(); });
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); start(); }));
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('focusout', (event) => { if (!carousel.contains(event.relatedTarget)) start(); });
+      document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+      start();
+    })();
+  </script>
+{{- end -}}
