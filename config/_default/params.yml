@@ -123,8 +123,8 @@ sidebar:
     show_common: true # whether to show common sidebar, ignored on mobile devices
 
 social:
-  # email: moshang168@gmail.com
-  # github: https://github.com/moshang168
+  email: mailto:moshang168@gmail.com
+  github: https://github.com/moshang168
   # google: https://plus.google.com/moshang168
   # twitter: https://twitter.com/yourname
   # bluesky: https://bsky.app/profile/yourname
@@ -631,18 +631,28 @@ share:
   # - bluesky
   # - linkedin
   # - reddit
-  # - weibo
-  # - qq
-  # - weixin
+  - weibo
+  - qq
+  - weixin
 
 # show categories card on home page
 home_categories:
-  enable: false
+  enable: true
   content:
-    - categories: # string (single-layer category) or array (multi-layer category)
-      cover: # empty means random cover
-    - categories:
-      cover:
+    - categories: "AI应用"
+      cover: "/images/covers/ollama-guide.jpg"
+    - categories: "编程工具"
+      cover: "/images/covers/git-guide.jpg"
+    - categories: "家庭网络"
+      cover: "/images/covers/home-network.jpg"
+    - categories: "开源工具"
+      cover: "/images/covers/windows-tools.jpg"
+    - categories: "网络运维"
+      cover: "/images/covers/soft-router-guide.jpg"
+    - categories: "工具"
+      cover: "/images/covers/obs-guide.jpg"
+    - categories: "网站搭建"
+      cover: "/images/covers/hugo-guide.jpg"
 
 ########################################
 # Experimental features

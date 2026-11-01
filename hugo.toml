@@ -9,6 +9,7 @@ paginate = 10
 
 defaultContentLanguage = 'zh-CN'
 defaultContentLanguageInSubdir = false
+hasCJKLanguage = true
 
 [languages.zh-CN]
   languageName = "简体中文"
