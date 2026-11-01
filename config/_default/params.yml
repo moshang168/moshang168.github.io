@@ -649,8 +649,6 @@ home_categories:
       cover: "/images/covers/windows-tools.jpg"
     - categories: "网络运维"
       cover: "/images/covers/soft-router-guide.jpg"
-    - categories: "工具"
-      cover: "/images/covers/obs-guide.jpg"
     - categories: "网站搭建"
       cover: "/images/covers/hugo-guide.jpg"
 
