@@ -643,14 +643,10 @@ home_categories:
       cover: "/images/covers/ollama-guide.jpg"
     - categories: "编程工具"
       cover: "/images/covers/git-guide.jpg"
-    - categories: "家庭网络"
-      cover: "/images/covers/home-network.jpg"
     - categories: "开源工具"
       cover: "/images/covers/windows-tools.jpg"
     - categories: "网络运维"
       cover: "/images/covers/soft-router-guide.jpg"
-    - categories: "网站搭建"
-      cover: "/images/covers/hugo-guide.jpg"
 
 ########################################
 # Experimental features

@@ -1,6 +1,6 @@
 .post-categories-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 32px;
   margin-bottom: 32px;
 
@@ -17,6 +17,110 @@
   &.aos-animate {
     transition-property: initial !important;
   }
+}
+
+.home-carousel {
+  position: relative;
+  height: clamp(240px, 36vw, 430px);
+  margin-bottom: 32px;
+  overflow: hidden;
+  border-radius: $post-radius;
+  background: var(--color-red-6);
+}
+
+.home-carousel-track,
+.home-carousel-slide,
+.home-carousel-slide > a,
+.home-carousel-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-carousel-slide {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.home-carousel-caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 64px 28px 28px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.78));
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.home-carousel-title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.home-carousel-arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.home-carousel-prev { left: 16px; }
+.home-carousel-next { right: 16px; }
+
+.home-carousel-dots {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 18px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.home-carousel-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+
+  &.is-active { background: #fff; }
+}
+
+@media screen and (max-width: 479px) {
+  .home-carousel { height: 230px; margin-bottom: 20px; }
+  .home-carousel-caption { padding: 48px 18px 24px; }
+  .home-carousel-arrow { width: 36px; height: 36px; }
+  .home-carousel-prev { left: 10px; }
+  .home-carousel-next { right: 10px; }
 }
 
 .post-categories-wrap {
