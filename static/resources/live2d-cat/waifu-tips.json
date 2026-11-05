@@ -1,0 +1,23 @@
+{
+  "mouseover": [],
+  "click": [],
+  "touch": [],
+  "time": [],
+  "seasons": [],
+  "models": [],
+  "message": {
+    "default": "喵，欢迎回来",
+    "console": "喵～欢迎回来。",
+    "copy": "喵～欢迎回来。",
+    "visibilitychange": "喵～欢迎回来。",
+    "changeSuccess": "喵～欢迎回来。",
+    "changeFail": "喵～欢迎回来。",
+    "photo": "喵～欢迎回来。",
+    "goodbye": "喵～下次再见。",
+    "hitokoto": "喵～欢迎回来。",
+    "welcome": "喵，欢迎回来",
+    "referrer": "喵，欢迎来自 $1 的朋友",
+    "hoverBody": "喵～欢迎回来。",
+    "tapBody": "喵～欢迎回来。"
+  }
+}

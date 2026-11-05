@@ -1,0 +1,9 @@
+/* Keep the mascot and its welcome bubble; hide the widget controls. */
+#waifu-tool,
+#waifu-toggle {
+  display: none !important;
+}
+
+#waifu {
+  z-index: 20;
+}

@@ -656,7 +656,7 @@ home_categories:
 # Make sure your code snippet is safeHTML
 injector:
   head_begin: # Inject code snippet right after <head>
-  head_end: # Inject code snippet right before </head>
+  head_end: '<link rel="stylesheet" href="/css/live2d-cat.css">' # Inject code snippet right before </head>
   body_begin: # Inject code snippet right after <body>
   body_end: # Inject code snippet right before </body>
   sidebar_begin: # Inject code snippet right after <aside>
@@ -690,8 +690,8 @@ live2d:
 
 # Experimental
 live2d_widgets:
-  enable: false
-  position: left # left or right
+  enable: true
+  position: right # left or right
 
 # https://github.com/CodeByZach/pace
 pace:
